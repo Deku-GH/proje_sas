@@ -190,6 +190,61 @@ void affiche_détails()
         printf("date :%s \n", reservt.date[a]);
     }
 }
+void recherche()
+{
+    int rech;
+    char name[20];
+    int iad ;
+    printf("//vous voulez cherche avec//\n 1:le nome \n 1:id ");
+    scanf("%d", &rech);
+    switch (rech)
+    {
+    case 1:
+    {
+        printf("entez la nom \n");
+        scanf("%s", &name);
+        for (int i = 0; i < count; i++)
+        {
+            if (strcmp(reservt.Nome[i], name))
+    
+            {
+                printf("la reservation : %d\n", count + 1);
+                printf(" nom prenom %s ", reservt.Nome[i]);
+                printf("%s, :\n", reservt.prenome[i]);
+                printf("%d \n", reservt.age[i]);
+                printf("%d \n", reservt.telephone[i]);
+                printf("Statut de réservation : %s\n", reservt.statu[i]);
+                printf("%d", reservt.id[i]);
+                printf("date :%s \n", reservt.date[i]);
+            }
+        }
+    }
+    break;
+    case 2 : {
+        printf("entez la nom \n");
+        scanf("%d",&iad);
+        for (int i = 0; i < count; i++)
+        {
+            if (reservt.id[i] == iad)
+    
+            {
+                printf("la reservation : %d\n", count + 1);
+                printf(" nom prenom %s ", reservt.Nome[i]);
+                printf("%s, :\n", reservt.prenome[i]);
+                printf("%d \n", reservt.age[i]);
+                printf("%d \n", reservt.telephone[i]);
+                printf("Statut de réservation : %s\n", reservt.statu[i]);
+                printf("%d", reservt.id[i]);
+                printf("date :%s \n", reservt.date[i]);
+            }
+        }
+    }
+    break;
+
+    default:printf("npas exite ");
+        break;
+    }
+}
 
 void affiche_choix()
 {
