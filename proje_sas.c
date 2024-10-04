@@ -59,7 +59,7 @@ void ajoute()
             break;
         }
 
-        reservt.id[i] = rand();
+        reservt.id[i] = rand() % 10000;
 
         printf("Entrez la date de réservation \n:");
         printf("yyyy/mm/dd \n");
@@ -265,23 +265,51 @@ void tre()
 
 {
     int stt;
+    char temp[100];
+    char pre[100];
+    int tele;
+    int AG;
+    int IAD;
+    char DT;
     printf("Comme vous voulez organiser :\n");
     printf("1:statut");
-    if ()
+
+    for (int i = 0; i < count - 1; i++)
     {
-        for (int i = 0; i < count; i++)
+        int j_min = i;
+        for (int g = 0; g < count - 1; g++)
         {
-            for (int g = 0; g < count; g++)
+
+            if (strcmp(reservt.Nome[i], reservt.Nome[j]) < 0)
+                j_min = g;
+
+            if (j_min != i)
             {
-                
-
-                
-
-
-
+                // swp name
+                strcpy(temp, reservt.Nome[i]);
+                strcpy(reservt.Nome[i], reservt.Nome[j_min]);
+                strcpy(reservt.Nome[j_min], temp);
+                // swp prenom
+                strcpy(pre, reservt.prenome[i]);
+                strcpy(reservt.prenome[i], reservt.prenome[j_min]);
+                strcpy(reservt.prenome[j_min], pre);
+                // swp date
+                strcpy(DT, reservt.date[i]);
+                strcpy(reservt.date[i], reservt.date[j_min]);
+                strcpy(reservt.date[j_min], DT);
+                // swp telephone
+                tele = reservt.telephone[i];
+                reservt.telephone[i] = reservt.telephone[j_min];
+                reservt.telephone[j_min] = tele;
+                // swp age
+                AG = reservt.age[i];
+                reservt.age[i] = reservt.age[j_min];
+                reservt.age[j_min] = AG;
+                // swp id
+                IAD = reservt.id[i];
+                reservt.id[i] = reservt.id[j_min];
+                reservt.id[j_min] = IAD;
             }
-            
-            
         }
     }
 }
@@ -304,6 +332,8 @@ int main()
             break;
         case 3:
             affiche_details();
+            break;
+            case 4 :tre();
             break;
         case 5:
             recherche();
