@@ -232,7 +232,7 @@ void recherche()
             if (reservt.id[i] == iad)
 
             {
-                printf("la reservation : %d\n", );
+                printf("la reservation : %d\n" );
                 printf(" nom prenom %s ", reservt.Nome[i]);
                 printf("%s, :\n", reservt.prenome[i]);
                 printf("%d \n", reservt.age[i]);
@@ -270,7 +270,7 @@ void tre()
     int tele;
     int AG;
     int IAD;
-    char DT;
+    char DT[100];
     printf("Comme vous voulez organiser :\n");
     printf("1:statut");
 
@@ -280,7 +280,7 @@ void tre()
         for (int g = 0; g < count - 1; g++)
         {
 
-            if (strcmp(reservt.Nome[i], reservt.Nome[j]) < 0)
+            if (strcmp(reservt.Nome[i], reservt.Nome[g]) < 0)
                 j_min = g;
 
             if (j_min != i)
@@ -313,6 +313,9 @@ void tre()
         }
     }
 }
+void statac(){
+    
+}
 
 int main()
 {
@@ -338,6 +341,7 @@ int main()
         case 5:
             recherche();
             break;
+            case 7 : break
         default:
             printf("Entrez un nombre entre 1 et 7");
             break;
