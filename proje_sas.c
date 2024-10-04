@@ -39,6 +39,7 @@ void ajoute()
         printf("2:raporte\n");
         printf("3:annule\n");
         printf("4:trait\n");
+        printf("entrez :");
         scanf("%d", &st);
         switch (st)
         {
@@ -60,7 +61,8 @@ void ajoute()
 
         reservt.id[i] = rand();
 
-        printf("Entrez la date de réservation :");
+        printf("Entrez la date de réservation \n:");
+        printf("yyyy/mm/dd \n");
         scanf("%s", &annee);
 
         strcpy(reservt.date[i], annee);
@@ -97,6 +99,7 @@ void modev_suprime()
         {
             if (ID == reservt.id[i])
             {
+                printf("==========================================\n");
                 printf("Que voulez-vous  changer ? \n");
                 printf("1:nom \n");
                 printf("2:prenom \n");
@@ -144,11 +147,10 @@ void modev_suprime()
                 break;
 
                 default:
+                    printf("a Cette option n'est pas disponible");
                     break;
                 }
             }
-            else
-                printf("no");
         }
     }
     else if (M_s == 2)
@@ -174,12 +176,12 @@ void modev_suprime()
     }
 }
 
-void affiche_détails()
+void affiche_details()
 {
     for (int a = 0; a < count; a++)
 
     {
-
+        printf("==========================================\n");
         printf("la reservation : %d\n", count + 1);
         printf(" nom prenom %s ", reservt.Nome[a]);
         printf("%s, :\n", reservt.prenome[a]);
@@ -194,8 +196,8 @@ void recherche()
 {
     int rech;
     char name[20];
-    int iad ;
-    printf("//vous voulez cherche avec//\n 1:le nome \n 1:id ");
+    int iad;
+    printf("//vous voulez cherche avec//\n 1:le nome \n 2:id ");
     scanf("%d", &rech);
     switch (rech)
     {
@@ -206,8 +208,9 @@ void recherche()
         for (int i = 0; i < count; i++)
         {
             if (strcmp(reservt.Nome[i], name))
-    
+
             {
+                printf("==========================================\n");
                 printf("la reservation : %d\n", count + 1);
                 printf(" nom prenom %s ", reservt.Nome[i]);
                 printf("%s, :\n", reservt.prenome[i]);
@@ -220,15 +223,16 @@ void recherche()
         }
     }
     break;
-    case 2 : {
-        printf("entez la nom \n");
-        scanf("%d",&iad);
+    case 2:
+    {
+        printf("entez id \n");
+        scanf("%d", &iad);
         for (int i = 0; i < count; i++)
         {
             if (reservt.id[i] == iad)
-    
+
             {
-                printf("la reservation : %d\n", count + 1);
+                printf("la reservation : %d\n", );
                 printf(" nom prenom %s ", reservt.Nome[i]);
                 printf("%s, :\n", reservt.prenome[i]);
                 printf("%d \n", reservt.age[i]);
@@ -241,7 +245,8 @@ void recherche()
     }
     break;
 
-    default:printf("npas exite ");
+    default:
+        printf("npas exite ");
         break;
     }
 }
@@ -255,6 +260,30 @@ void affiche_choix()
     printf("4:tre des réservation \n");
     printf("5:recherche des réservation \n");
     printf("6: statistiques \n");
+}
+void tre()
+
+{
+    int stt;
+    printf("Comme vous voulez organiser :\n");
+    printf("1:statut");
+    if ()
+    {
+        for (int i = 0; i < count; i++)
+        {
+            for (int g = 0; g < count; g++)
+            {
+                
+
+                
+
+
+
+            }
+            
+            
+        }
+    }
 }
 
 int main()
@@ -273,7 +302,14 @@ int main()
         case 2:
             modev_suprime();
             break;
+        case 3:
+            affiche_details();
+            break;
+        case 5:
+            recherche();
+            break;
         default:
+            printf("Entrez un nombre entre 1 et 7");
             break;
         }
 
