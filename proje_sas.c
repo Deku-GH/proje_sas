@@ -14,7 +14,7 @@ struct reservation
     char date[max_reservation][50];
 };
 struct reservation reservt;
-int count ;
+int count;
 void fisrt_rest()
 {
     strcpy(reservt.Nome[0], "sara");
@@ -23,6 +23,7 @@ void fisrt_rest()
     reservt.age[0] = 18;
     reservt.id[0] = rand() % 1000;
     strcpy(reservt.statu[0], " annule");
+    strcpy(resevt.date[0], "2025/10/4");
 
     strcpy(reservt.Nome[1], "najate");
     strcpy(reservt.prenome[1], "setra");
@@ -30,6 +31,7 @@ void fisrt_rest()
     reservt.age[1] = 43;
     reservt.id[1] = rand() % 1000;
     strcpy(reservt.statu[1], "valid");
+    strcpy(resevt.date[1], "2025/10/4");
 
     strcpy(reservt.Nome[2], "mouad");
     strcpy(reservt.prenome[2], "sertati");
@@ -37,6 +39,7 @@ void fisrt_rest()
     reservt.age[2] = 24;
     reservt.id[2] = rand() % 1000;
     strcpy(reservt.statu[2], "raporte");
+    strcpy(resevt.date[2], "2025/10/5");
 
     strcpy(reservt.Nome[3], "mohemmd");
     strcpy(reservt.prenome[3], "ouzzatt");
@@ -44,6 +47,7 @@ void fisrt_rest()
     reservt.age[3] = 18;
     reservt.id[3] = rand() % 1000;
     strcpy(reservt.statu[3], "validated");
+    strcpy(resevt.date[3], "2025/10/5");
 
     strcpy(reservt.Nome[4], "oussama");
     strcpy(reservt.prenome[4], "ben");
@@ -51,6 +55,7 @@ void fisrt_rest()
     reservt.age[4] = 22;
     reservt.id[4] = rand() % 1000;
     strcpy(reservt.statu[4], "trait");
+    strcpy(resevt.date[4], "2025/10/5");
 
     strcpy(reservt.Nome[5], "fatima");
     strcpy(reservt.prenome[5], "charte");
@@ -58,13 +63,15 @@ void fisrt_rest()
     reservt.age[5] = 28;
     reservt.id[5] = rand() % 1000;
     strcpy(reservt.statu[5], "valide");
+    strcpy(resevt.date[5], "2025/10/6");
 
-    strcpy(reservt.Nome[6],  "lana");
+    strcpy(reservt.Nome[6], "lana");
     strcpy(reservt.prenome[6], "trambe");
     strcpy(reservt.telephone[6], "06743470");
     reservt.age[6] = 21;
     reservt.id[6] = rand() % 1000;
-    strcpy(reservt.statu[6],  "trait");
+    strcpy(reservt.statu[6], "trait");
+    strcpy(resevt.date[6], "2025/10/6");
 
     strcpy(reservt.Nome[7], "amal");
     strcpy(reservt.prenome[7], "madis");
@@ -72,13 +79,15 @@ void fisrt_rest()
     reservt.age[7] = 22;
     reservt.id[7] = rand() % 1000;
     strcpy(reservt.statu[7], "valide");
+    strcpy(resevt.date[7], "2025/10/7");
 
     strcpy(reservt.Nome[8], "tara");
     strcpy(reservt.prenome[8], "amrab");
     strcpy(reservt.telephone[8], "04674367");
     reservt.age[8] = 25;
     reservt.id[8] = rand() % 1000;
-    strcpy(reservt.statu[8],  "raporte");
+    strcpy(reservt.statu[8], "raporte");
+    strcpy(resevt.date[8], "2025/10/7");
 
     strcpy(reservt.Nome[9], "nable");
     strcpy(reservt.prenome[9], "nos");
@@ -86,6 +95,7 @@ void fisrt_rest()
     reservt.age[9] = 22;
     reservt.id[9] = rand() % 1000;
     strcpy(reservt.statu[9], "valide");
+    strcpy(resevt.date[9], "2025/10/8");
 
     count = 10;
 }
@@ -96,7 +106,7 @@ void ajoute()
     char annee[20];
     printf("Combien de rendez-vous allez-vous prendre ?\n");
     scanf("%d", &x);
-    for (int i = count; i<count +x; i++)
+    for (int i = count; i < count + x; i++)
     {
         printf("==========================================\n");
         printf("la reservation : %d\n", count + 1);
@@ -142,9 +152,8 @@ void ajoute()
         strcpy(reservt.date[i], annee);
         printf("id de reservation : %d\n", reservt.id[i]);
         printf("==========================================\n");
-       
     }
-     count++;
+    count++;
 }
 void modev_suprime()
 
@@ -227,7 +236,6 @@ void modev_suprime()
             }
         }
     }
-  
 }
 
 void affiche_details()
@@ -235,7 +243,7 @@ void affiche_details()
     for (int a = 0; a < count; a++)
 
     {
-        
+
         printf("==========================================\n");
         printf("la reservation : %d\n", count + 1);
         printf("nom==>   %s \n", reservt.Nome[a]);
@@ -317,73 +325,17 @@ void affiche_choix()
     printf("4:recherche des réservation \n");
     printf("5: statistiques \n");
 }
-// void tre()
 
-// {
-//     int stt;
-//     char temp[100];
-//     char pre[100];
-//     char tele[50];
-//     int AG;
-//     int IAD;
-//     char DT[100];
-//     int tret ;
-//     printf("Comme vous voulez organiser :\n");
-//     printf("1:statut");
-//     scanf("%d",&tret);
-// if(tret == 1){
-//     for (int i = 0; i < count - 1; i++)
-//     {
-//         int j_min = i;
-//         for (int g = 0; g < count - 1; g++)
-//         {
-
-//             if (strcmp(reservt.Nome[i], reservt.Nome[g]) < 0)
-//                 j_min = g;
-
-//             if (j_min != i)
-//             {
-//                 // swp name
-//                 strcpy(temp, reservt.Nome[i]);
-//                 strcpy(reservt.Nome[i], reservt.Nome[j_min]);
-//                 strcpy(reservt.Nome[j_min], temp);
-//                 // swp prenom
-//                 strcpy(pre, reservt.prenome[i]);
-//                 strcpy(reservt.prenome[i], reservt.prenome[j_min]);
-//                 strcpy(reservt.prenome[j_min], pre);
-//                 // swp date
-//                 strcpy(DT, reservt.date[i]);
-//                 strcpy(reservt.date[i], reservt.date[j_min]);
-//                 strcpy(reservt.date[j_min], DT);
-//                 // swp telephone
-//                 strcpy(tele, reservt.telephone[i]);
-//                 strcpy(reservt.telephone[i], reservt.telephone[j_min]);
-//                 strcpy(reservt.telephone[j_min], tele);
-//                 // swp age
-//                 AG = reservt.age[i];
-//                 reservt.age[i] = reservt.age[j_min];
-//                 reservt.age[j_min] = AG;
-//                 // swp id
-//                 IAD = reservt.id[i];
-//                 reservt.id[i] = reservt.id[j_min];
-//                 reservt.id[j_min] = IAD;
-//             }
-//         }
-//     }
-// }
-// }
 void statac()
 {
-    int sum , resulta;
-    
-    for(int i = 0 ;i < count ;i++)
+    int sum, resulta;
+
+    for (int i = 0; i < count; i++)
     {
-        sum+=reservt.age[i];
-        
+        sum += reservt.age[i];
     }
-    resulta = sum / count ;
-    printf("la moyanne et = %d \n",resulta );
-    
+    resulta = sum / count;
+    printf("la moyanne et = %d \n", resulta);
 }
 
 int main()
@@ -414,7 +366,8 @@ int main()
         case 4:
             recherche();
             break;
-        case 5: statac();
+        case 5:
+            statac();
             break;
         default:
             printf("Entrez un nombre entre 1 et 7");
