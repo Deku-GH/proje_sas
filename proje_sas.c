@@ -14,7 +14,30 @@ struct reservation
     char date[max_reservation][50];
 };
 struct reservation reservt;
-int count;
+int count = 10;
+void fisrt_rest()
+{
+    char name[max_reservation][50] = {"Mouad", "Mohamed", "oussama", "Brahim", "Zainab", "Sara", "Youssef", "Fatima", "saad", "Nesrine"};
+    char prenom[max_reservation][50] = {"El Fassi", "El Alaoui", " Benjelloun", "Es-Sekkali", " Amziane", " Barada", "Sebbai", "Boutaleb", "Er-Rafai", "Daoudi"};
+    int lage[max_reservation] = {18, 20, 23, 20, 21, 19, 19, 18, 20};
+    char teleph [max_reservation][50] = {"0673883","0634265","063853","071136","063542","063355","065838","065784","063730","086353"};
+    char d[max_reservation][50] = {"5 /10/ 2024", "6 /10/ 2024", "7 /10/ 2024", "8 /10/ 2024", "9/10/ 2024", "10 /10/ 2024", "11 /10/ 2024", "12 /10/ 2024", "13/10/ 2024", "14 /10/ 2024"};
+    int di[max_reservation] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    char tst[max_reservation][50] = {"valider", "trait", "raporte", "valider", "raporte", "annule", "annule", "valider", "trait", "annule"};
+    for (int i = 0; i <= count; i++)
+    {
+        for (int y = 0; y <= count; y++)
+        {
+            strcpy(reservt.Nome[i], name[y]);
+            strcpy(reservt.prenome[i], prenom[y]);
+            strcpy(reservt.date[i],d[y]);
+            strcpy(reservt.statu[i], tst[y]);
+            reservt.age[i] = lage[y];
+            reservt.telephone[i] =teleph[y];
+            reservt.id[i] =di[y];
+        }
+    }
+}
 
 void ajoute()
 {
@@ -183,13 +206,14 @@ void affiche_details()
     {
         printf("==========================================\n");
         printf("la reservation : %d\n", count + 1);
-        printf(" nom prenom %s ", reservt.Nome[a]);
-        printf("%s, :\n", reservt.prenome[a]);
-        printf("%d \n", reservt.age[a]);
-        printf("%d \n", reservt.telephone[a]);
-        printf("Statut de réservation : %s\n", reservt.statu[a]);
-        printf("%d", reservt.id[a]);
-        printf("date :%s \n", reservt.date[a]);
+        printf("nom==>   %s \n", reservt.Nome[a]);
+        printf("prenom==> %s, :\n", reservt.prenome[a]);
+        printf("age==> %d \n", reservt.age[a]);
+        printf("telephone==> %d \n", reservt.telephone[a]);
+        printf("Statut de réservation==> %s\n", reservt.statu[a]);
+        printf("id==> %d\n", reservt.id[a]);
+        printf("date==> %s \n", reservt.date[a]);
+        printf("==========================================\n");
     }
 }
 void recherche()
@@ -212,12 +236,12 @@ void recherche()
             {
                 printf("==========================================\n");
                 printf("la reservation : %d\n", count + 1);
-                printf(" nom prenom %s ", reservt.Nome[i]);
+                printf("nom prenom %s ", reservt.Nome[i]);
                 printf("%s, :\n", reservt.prenome[i]);
                 printf("%d \n", reservt.age[i]);
                 printf("%d \n", reservt.telephone[i]);
                 printf("Statut de réservation : %s\n", reservt.statu[i]);
-                printf("%d", reservt.id[i]);
+                printf("id %d\n", reservt.id[i]);
                 printf("date :%s \n", reservt.date[i]);
             }
         }
@@ -232,7 +256,7 @@ void recherche()
             if (reservt.id[i] == iad)
 
             {
-                printf("la reservation : %d\n" );
+                printf("la reservation : %d\n");
                 printf(" nom prenom %s ", reservt.Nome[i]);
                 printf("%s, :\n", reservt.prenome[i]);
                 printf("%d \n", reservt.age[i]);
@@ -313,12 +337,14 @@ void tre()
         }
     }
 }
-void statac(){
+void statac()
+{
     
 }
 
 int main()
 {
+    fisrt_rest();
     int choise;
     int i = 0;
     do
@@ -336,12 +362,14 @@ int main()
         case 3:
             affiche_details();
             break;
-            case 4 :tre();
+        case 4:
+            tre();
             break;
         case 5:
             recherche();
             break;
-            case 7 : break
+        case 7:
+            break;
         default:
             printf("Entrez un nombre entre 1 et 7");
             break;
